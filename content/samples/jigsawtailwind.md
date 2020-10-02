@@ -10,4 +10,4 @@ git_url: https://github.com/buildwith-ionos/build-with-ionos-jigsaw-tailwindcss
 author: alex
 type: sample
 ---
-A demo project building a static site with jigsaw and tailwind 
+A demo project building a static site with jigsaw and tailwind
