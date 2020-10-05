@@ -2,8 +2,8 @@
   <Layout>
     <section>
       <!-- title -->
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="grid place-items-center ">
+      <div class="grid md:grid-cols-2 gap-4 h-auto">
+        <div class="grid place-items-center">
           <!-- button ship to ionos-->
           <div>
             <a :href="'https://buildwith.ionos.com/setup?repo=' + $page.sample.git_url"
@@ -44,53 +44,45 @@
             </figure>
           </div>
         </div>
+        <!-- content -->
         <div class="markdown mt-8">
           <div v-html="$page.sample.content"></div>
         </div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-
-      </div>
-      <div class="grid grid-flow-col grid-rows-2">
-
-
-      </div>
-
-
-
-      <!-- content -->
-
-
-      <a
-          :href="$page.sample.git_url"
-          rel="noopener"
-          target="_blank"
-      >
-        <svg
-            class="fill-current text-gray-600 w-8 h-8 mr-2"
-            role="img"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-          <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="/icons.svg#icon-github"
-          />
-        </svg>
-      </a>
-      <!-- tag cloud -->
-      <ul class="flex border-t border-gray-100">
-        <li class="mr-2" v-for="tag in $page.sample.tags" :key="tag.id">
-          <g-link
-              :to="tag.path"
-              class="inline-block border border-pink-300 px-4 py-2 text-pink-500 text-xs font-semibold rounded hover:text-white hover:bg-pink-500 hover:border-pink-500"
-          >{{ tag.title }}
-          </g-link
+        <div class="grid place-items-center">
+          <!-- tag cloud -->
+          <ul class="flex border-t border-gray-100">
+            <li class="mr-2" v-for="tag in $page.sample.tags" :key="tag.id">
+              <g-link
+                  :to="tag.path"
+                  class="inline-block border border-pink-300 px-4 py-2 text-pink-500 text-xs font-semibold rounded hover:text-white hover:bg-pink-500 hover:border-pink-500"
+              >{{ tag.title }}
+              </g-link
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="place-self-end justify-self-start flex ">
+          <span class="self-center mr-2">You find the source of {{ $page.sample.title }} here:</span>
+          <span> <a
+              :href="$page.sample.git_url"
+              rel="noopener"
+              target="_blank"
           >
-        </li>
-      </ul>
+            <svg
+                class="fill-current text-gray-600 w-8 h-8 mr-2"
+                role="img"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+              <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="/icons.svg#icon-github"
+              />
+            </svg>
+          </a>
+           </span>
+        </div>
+      </div>
     </section>
   </Layout>
 </template>
